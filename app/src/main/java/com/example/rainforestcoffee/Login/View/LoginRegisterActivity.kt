@@ -1,4 +1,4 @@
-package com.example.rainforestcoffee.Login
+package com.example.rainforestcoffee.Login.View
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
