@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/blur_background"
+        android:src="@drawable/background_blur"
         android:scaleType="centerCrop"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -57,6 +57,17 @@
             style="@style/h2"
             android:textColor="@color/g_black"
             android:text="@string/don_t_have_an_account_register_now"/>
+
+        <TextView
+            android:id="@+id/registerTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            app:layout_constraintStart_toEndOf="@+id/letsLoginDesc"
+            app:layout_constraintTop_toBottomOf="@+id/letsLoginTv"
+            style="@style/h2"
+            android:textColor="@color/g_black"
+            android:text="@string/register_underline"/>
 
         <EditText
             android:id="@+id/gmailEditTv"
@@ -114,47 +125,49 @@
             android:text="@string/login"
             android:textSize="18sp"/>
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/facebookBtn"
-            android:layout_width="wrap_content"
+            style="@style/Widget.Button.SSO"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/blue_background"
-            android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            android:layout_marginTop="12dp"
+            android:text="@string/continue_with_facebook"
+            android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@+id/letsLoginBtn"
-            android:src="@drawable/facebook_login"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/facebook"
-            android:textColor="@color/white_smoke"
-            android:layout_marginStart="20dp"
-            app:layout_constraintStart_toStartOf="@+id/facebookBtn"
-            app:layout_constraintEnd_toEndOf="@+id/facebookBtn"
-            app:layout_constraintTop_toTopOf="@+id/facebookBtn"
-            app:layout_constraintBottom_toBottomOf="@+id/facebookBtn" />
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
+            android:padding="12dp"/>
 
         <ImageView
-            android:id="@+id/googleBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/red_background"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@+id/facebookBtn"
             app:layout_constraintTop_toBottomOf="@+id/letsLoginBtn"
-            android:src="@drawable/google_login"/>
+            android:src="@drawable/facebook_icon"/>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/googleBtn"
+            style="@style/Widget.Button.SSO"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/gmail"
-            android:textColor="@color/white_smoke"
-            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/continue_with_google"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/facebookBtn"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
+            android:padding="12dp"/>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="@+id/googleBtn"
-            app:layout_constraintEnd_toEndOf="@+id/googleBtn"
-            app:layout_constraintTop_toTopOf="@+id/googleBtn"
-            app:layout_constraintBottom_toBottomOf="@+id/googleBtn" />
+            app:layout_constraintTop_toBottomOf="@+id/facebookBtn"
+            android:src="@drawable/google_icon"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

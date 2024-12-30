@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/blur_background"
+        android:src="@drawable/background_blur"
         android:scaleType="centerCrop"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,24 +39,65 @@
             app:layout_constraintGuide_begin="30dp" />
 
         <TextView
-            android:id="@+id/letsLoginTv"
+            android:id="@+id/letsRegisterTv"
             style="@style/h4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/let_s_login"
-            android:layout_marginTop="70dp"
+            android:text="@string/let_s_register"
+            android:layout_marginTop="40dp"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
             app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
 
         <TextView
-            android:id="@+id/letsLoginDesc"
+            android:id="@+id/letsRegisterDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/letsLoginTv"
+            app:layout_constraintTop_toBottomOf="@+id/letsRegisterTv"
             style="@style/h2"
             android:textColor="@color/g_black"
-            android:text="@string/don_t_have_an_account_register_now"/>
+            android:text="@string/already_have_an_account"/>
+
+        <TextView
+            android:id="@+id/loginTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            app:layout_constraintStart_toEndOf="@+id/letsRegisterDesc"
+            app:layout_constraintTop_toBottomOf="@+id/letsRegisterTv"
+            style="@style/h2"
+            android:textColor="@color/g_black"
+            android:text="@string/login_underline"/>
+
+        <EditText
+            android:id="@+id/firstName"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/editTextHeight"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
+            app:layout_constraintTop_toBottomOf="@+id/letsRegisterDesc"
+            style="@style/editText"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/g_gray500"
+            android:hint="@string/first_name"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="40dp" />
+
+        <EditText
+            android:id="@+id/lastName"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/editTextHeight"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
+            app:layout_constraintTop_toBottomOf="@+id/firstName"
+            style="@style/editText"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/g_gray500"
+            android:hint="@string/last_name"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="16dp" />
 
         <EditText
             android:id="@+id/gmailEditTv"
@@ -64,14 +105,14 @@
             android:layout_height="@dimen/editTextHeight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
             app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
-            app:layout_constraintTop_toBottomOf="@+id/letsLoginDesc"
+            app:layout_constraintTop_toBottomOf="@+id/lastName"
             style="@style/editText"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@color/g_gray500"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
-            android:layout_marginTop="40dp" />
+            android:layout_marginTop="16dp" />
 
         <EditText
             android:id="@+id/passEditTv"
@@ -88,74 +129,62 @@
             android:inputType="numberPassword"
             android:layout_marginTop="16dp" />
 
-        <TextView
-            android:id="@+id/forgotPassTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/passEditTv"
-            style="@style/h2"
-            android:textStyle="bold"
-            android:textSize="14sp"
-            android:layout_marginTop="6dp"
-            android:textColor="@color/g_black"
-            android:text="@string/forgot_password"/>
-
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/letsLoginBtn"
+            android:id="@+id/registerBtn"
             style="@style/Widget.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            app:layout_constraintTop_toBottomOf="@+id/forgotPassTv"
+            app:layout_constraintTop_toBottomOf="@+id/passEditTv"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
             app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
             android:padding="12dp"
-            android:text="@string/login"
+            android:text="@string/register"
             android:textSize="18sp"/>
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/facebookBtn"
-            android:layout_width="wrap_content"
+            style="@style/Widget.Button.SSO"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/blue_background"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/continue_with_facebook"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/registerBtn"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/letsLoginBtn"
-            android:src="@drawable/facebook_login"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/facebook"
-            android:textColor="@color/white_smoke"
-            android:layout_marginStart="20dp"
-            app:layout_constraintStart_toStartOf="@+id/facebookBtn"
-            app:layout_constraintEnd_toEndOf="@+id/facebookBtn"
-            app:layout_constraintTop_toTopOf="@+id/facebookBtn"
-            app:layout_constraintBottom_toBottomOf="@+id/facebookBtn" />
+            app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
+            android:padding="12dp"/>
 
         <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@+id/facebookBtn"
+            app:layout_constraintTop_toBottomOf="@+id/registerBtn"
+            android:src="@drawable/facebook_icon"/>
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/googleBtn"
-            android:layout_width="wrap_content"
+            style="@style/Widget.Button.SSO"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/red_background"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/continue_with_google"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/facebookBtn"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
             app:layout_constraintEnd_toEndOf="@+id/guidelineRight"
-            app:layout_constraintTop_toBottomOf="@+id/letsLoginBtn"
-            android:src="@drawable/google_login"/>
+            android:padding="12dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/gmail"
-            android:textColor="@color/white_smoke"
-            android:layout_marginStart="20dp"
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="@+id/googleBtn"
-            app:layout_constraintEnd_toEndOf="@+id/googleBtn"
-            app:layout_constraintTop_toTopOf="@+id/googleBtn"
-            app:layout_constraintBottom_toBottomOf="@+id/googleBtn" />
-
+            app:layout_constraintTop_toBottomOf="@+id/facebookBtn"
+            android:src="@drawable/google_icon"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
