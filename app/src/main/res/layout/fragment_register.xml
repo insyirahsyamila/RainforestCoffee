@@ -160,6 +160,7 @@
             android:layout_height="24dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="24dp"
+            android:translationZ="20dp"
             app:layout_constraintStart_toStartOf="@+id/facebookBtn"
             app:layout_constraintTop_toBottomOf="@+id/registerBtn"
             android:src="@drawable/facebook_icon"/>
@@ -182,6 +183,7 @@
             android:layout_height="24dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="24dp"
+            android:translationZ="20dp"
             app:layout_constraintStart_toStartOf="@+id/googleBtn"
             app:layout_constraintTop_toBottomOf="@+id/facebookBtn"
             android:src="@drawable/google_icon"/>

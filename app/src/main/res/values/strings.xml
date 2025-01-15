@@ -20,4 +20,6 @@
     <string name="register_underline"><u>Register</u></string>
     <string name="continue_with_facebook">Continue with Facebook</string>
     <string name="continue_with_google">Continue with Google</string>
+    <string name="account_created">Account Created</string>
+    <string name="cannot_create_account">Cannot create account</string>
 </resources>
