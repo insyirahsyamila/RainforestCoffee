@@ -126,7 +126,7 @@
             android:textStyle="bold"
             android:hint="@string/password"
             android:textColor="@color/g_gray500"
-            android:inputType="numberPassword"
+            android:inputType="textPassword"
             android:layout_marginTop="16dp" />
 
         <androidx.appcompat.widget.AppCompatButton

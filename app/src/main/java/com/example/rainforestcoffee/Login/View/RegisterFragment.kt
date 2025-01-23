@@ -13,8 +13,11 @@ import com.example.rainforestcoffee.Data.User
 import com.example.rainforestcoffee.Login.ViewModel.RegisterViewModel
 import com.example.rainforestcoffee.R
 import com.example.rainforestcoffee.databinding.FragmentRegisterBinding
+import com.example.rainforestcoffee.util.RegisterValidation
 import com.example.rainforestcoffee.util.Resource
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 private val TAG = "RegisterFragment"
 
@@ -58,6 +61,27 @@ class RegisterFragment : Fragment() {
                         Toast.makeText(requireContext(), getString(R.string.cannot_create_account),Toast.LENGTH_SHORT).show()
                     }
                     else -> Unit
+                }
+            }
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.validation.collect{ validation ->
+                if (validation.email is RegisterValidation.Failed){
+                    withContext(Dispatchers.Main){
+                        binding.gmailEditTv.apply {
+                            requestFocus()
+                            error = validation.email.message
+                        }
+                    }
+                }
+                if (validation.password is RegisterValidation.Failed) {
+                    withContext(Dispatchers.Main){
+                        binding.passEditTv.apply {
+                            requestFocus()
+                            error = validation.password.message
+                        }
+                    }
                 }
             }
         }
