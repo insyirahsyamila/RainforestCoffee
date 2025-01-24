@@ -22,4 +22,8 @@
     <string name="continue_with_google">Continue with Google</string>
     <string name="account_created">Account Created</string>
     <string name="cannot_create_account">Cannot create account</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="we_ll_send_you_the_reset_password_link_to_your_email">We\'ll send you the reset password link to your email</string>
+    <string name="cancel">Cancel</string>
+    <string name="send">Send</string>
 </resources>
