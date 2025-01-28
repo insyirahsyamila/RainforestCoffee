@@ -14,7 +14,7 @@
         android:theme="@style/Theme.RainforestCoffee"
         tools:targetApi="31">
         <activity
-            android:name=".Login.View.ShoppingActivity"
+            android:name=".Home.View.ShoppingActivity"
             android:exported="false" />
         <activity
             android:name=".Login.View.LoginRegisterActivity"
