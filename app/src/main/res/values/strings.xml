@@ -26,4 +26,6 @@
     <string name="we_ll_send_you_the_reset_password_link_to_your_email">We\'ll send you the reset password link to your email</string>
     <string name="cancel">Cancel</string>
     <string name="send">Send</string>
+    <string name="example_gmail_com">example@gmail.com</string>
+    <string name="reset_link_was_sent_to_your_email">Reset link was sent to your email</string>
 </resources>

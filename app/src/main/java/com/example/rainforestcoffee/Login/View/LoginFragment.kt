@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.compose.material3.Snackbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
@@ -14,7 +15,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.rainforestcoffee.Login.ViewModel.LoginViewModel
 import com.example.rainforestcoffee.R
 import com.example.rainforestcoffee.databinding.FragmentLoginBinding
+import com.example.rainforestcoffee.dialog.setupBottomSheetDialog
 import com.example.rainforestcoffee.util.Resource
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -45,6 +48,31 @@ class LoginFragment : Fragment() {
                 viewModel.login(email, password)
             }
         }
+
+        binding.forgotPassTv.setOnClickListener {
+            setupBottomSheetDialog { email ->
+                viewModel.resetPassword(email)
+            }
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.resetPassword.collect{
+                when(it){
+                    is Resource.Loading -> {
+                    }
+                    is Resource.Success -> {
+                        Snackbar.make(requireView(),
+                            getString(R.string.reset_link_was_sent_to_your_email), Snackbar.LENGTH_SHORT).show()
+                    }
+                    is Resource.Error -> {
+                        Snackbar.make(requireView(), "Error: ${it.message}", Snackbar.LENGTH_SHORT).show()
+                    }
+                    else -> Unit
+                }
+            }
+        }
+
+
         lifecycleScope.launchWhenStarted {
             viewModel.login.collect{
                 when(it){

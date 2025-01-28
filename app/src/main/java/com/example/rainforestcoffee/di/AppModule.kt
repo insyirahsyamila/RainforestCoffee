@@ -1,4 +1,4 @@
-package com.example.rainforestcoffee.Login.di
+package com.example.rainforestcoffee.di
 
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
