@@ -61,6 +61,7 @@ dependencies {
     implementation(libs.firebase.firestore)
     implementation(libs.material)
     implementation(libs.androidx.activity)
+    implementation(libs.glide)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -71,4 +72,5 @@ dependencies {
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+    kapt(libs.glide.compiler)
 }

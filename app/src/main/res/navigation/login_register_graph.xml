@@ -11,9 +11,8 @@
         android:label="fragment_introduction"
         tools:layout="@layout/fragment_introduction" >
         <action
-            android:id="@+id/action_introductionFragment_to_accountOptionsFragment"
-            app:destination="@id/accountOptionsFragment"
-            app:enterAnim="@anim/from_bottom_anim" />
+            android:id="@+id/action_introductionFragment_to_shoppingActivity"
+            app:destination="@id/shoppingActivity" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment2"
@@ -55,4 +54,14 @@
             app:exitAnim="@anim/from_up_anim"
             app:popUpTo="@id/accountOptionsFragment" />
     </fragment>
+    <activity
+        android:id="@+id/shoppingActivity"
+        android:name="com.example.rainforestcoffee.Home.View.ShoppingActivity"
+        android:label="activity_shopping"
+        tools:layout="@layout/activity_shopping" />
 </navigation>
+
+<!--<action
+            android:id="@+id/action_introductionFragment_to_accountOptionsFragment"
+            app:destination="@id/accountOptionsFragment"
+            app:enterAnim="@anim/from_bottom_anim" />-->

@@ -29,4 +29,6 @@
     <color name="pink_primary">#e8a18b</color>
     <color name="green_primary">#4f7e52</color>
     <color name="white_smoke">#F5F5F5</color>
+    <color name="cool_grey">#E0E0E0</color>
+    <color name="medium_grey">#7B7B7B</color>
 </resources>
