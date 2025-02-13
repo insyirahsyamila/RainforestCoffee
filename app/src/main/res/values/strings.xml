@@ -38,4 +38,7 @@
     <string name="best_products">Best Products</string>
     <string name="iced_latte">Iced Latte</string>
     <string name="add_to_cart">Add to cart</string>
+    <string name="see_menu">See menu</string>
+    <string name="croissant">Croissant</string>
+    <string name="bestsellers">BestSellers</string>
 </resources>

@@ -33,6 +33,8 @@ class HomeFragment : Fragment() {
             BlendedFragment()       // Position 4
         )
 
+        binding.viewPager.isUserInputEnabled = false
+
         val viewPager2Adapter = HomeViewPagerAdapter(categoriesFragments, childFragmentManager, lifecycle)
         binding.viewPager.adapter = viewPager2Adapter
 

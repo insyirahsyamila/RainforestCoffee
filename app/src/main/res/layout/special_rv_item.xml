@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="230dp"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="0dp"
-    app:cardCornerRadius="5dp"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="6dp"
     app:cardBackgroundColor="@color/g_card_background"
     app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingBottom="8dp">
 
         <ImageView
             android:id="@+id/specialProductImg"
             android:layout_width="90dp"
             android:layout_height="90dp"
+            android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="16dp"
@@ -23,15 +26,16 @@
 
         <TextView
             android:id="@+id/specialProductName"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/iced_latte"
             app:layout_constraintStart_toEndOf="@id/specialProductImg"
             app:layout_constraintTop_toTopOf="@id/specialProductImg"
-            android:layout_marginTop="7dp"
-            android:layout_marginStart="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
             android:fontFamily="@font/poppins_thin"
             android:textStyle="bold"
+            android:maxLines="1"
             android:textColor="@color/black"
             android:textSize="17sp"/>
 
@@ -59,6 +63,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/specialProductPrice"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="6dp"
             android:textAllCaps="false"/>
 
         <LinearLayout
@@ -66,15 +71,17 @@
             android:layout_height="23dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/white_background"
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
                 android:src="@drawable/icon_fav"
                 android:layout_gravity="center"
-                android:layout_marginTop="7dp" />
+                android:layout_marginTop="4dp" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

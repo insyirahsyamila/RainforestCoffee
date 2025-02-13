@@ -1,87 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@color/g_card_background"
-    app:elevation="0dp">
+    app:elevation="2dp"
+    app:cardCornerRadius="6dp"
+    app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/img_product"
+            android:id="@+id/bestProductImg"
             android:layout_width="114dp"
             android:layout_height="108dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:scaleType="fitCenter"/>
+            android:scaleType="centerCrop"/>
 
         <LinearLayout
-            android:id="@+id/linear_product_name"
+            android:id="@+id/productLy"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="@id/img_product"
-            app:layout_constraintTop_toBottomOf="@id/img_product"
-            app:layout_constraintEnd_toEndOf="@id/img_product">
+            app:layout_constraintStart_toStartOf="@id/bestProductImg"
+            app:layout_constraintTop_toBottomOf="@id/bestProductImg"
+            app:layout_constraintEnd_toEndOf="@id/bestProductImg">
 
             <TextView
-                android:id="@+id/tv_name"
+                android:id="@+id/bestProductName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_light"
-                android:text="Chair"
+                android:text="@string/croissant"
                 android:textColor="@color/black"
+                android:maxLines="2"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:layout_weight="1"/>
 
             <ImageView
-                android:id="@+id/img_favorite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="16dp"
+                android:id="@+id/favIcon"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="8dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/search_icon"
+                android:src="@drawable/icon_fav"
                 app:tint="@color/g_blue_gray200" />
         </LinearLayout>
 
 
         <TextView
-            android:id="@+id/tv_new_price"
+            android:id="@+id/bestProductNewPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
             android:layout_marginBottom="15dp"
             android:fontFamily="@font/sf_pro_display"
-            android:text="$1600"
+            android:text="RM12.90"
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_price"
-            app:layout_constraintTop_toBottomOf="@id/linear_product_name"
+            app:layout_constraintStart_toEndOf="@id/bestProductPrice"
+            app:layout_constraintTop_toBottomOf="@id/productLy"
             android:layout_marginStart="10dp"/>
 
         <TextView
-            android:id="@+id/tv_price"
+            android:id="@+id/bestProductPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
             android:layout_marginBottom="15dp"
             android:fontFamily="@font/sf_pro_display"
-            android:text="$1600"
+            android:text="RM13.20"
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/img_product"
-            app:layout_constraintTop_toBottomOf="@id/linear_product_name" />
+            app:layout_constraintStart_toStartOf="@id/bestProductImg"
+            app:layout_constraintTop_toBottomOf="@id/productLy" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>
