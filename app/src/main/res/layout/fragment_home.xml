@@ -37,6 +37,7 @@
                 android:paddingBottom="8dp"
                 android:singleLine="true"
                 android:text="@string/search"
+                android:textColor="@color/cool_grey"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -47,17 +48,18 @@
                 android:layout_width="18dp"
                 android:layout_height="18dp"
                 android:layout_marginEnd="18dp"
-                android:src="@drawable/search_icon_grey"
+                android:src="@drawable/search"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="@color/cool_grey" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
             android:id="@+id/scanBtn"
             android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:src="@drawable/icon_scan_grey"
+            android:src="@drawable/code_scan"
             android:padding="6dp"/>
     </LinearLayout>
 

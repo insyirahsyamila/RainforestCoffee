@@ -11,8 +11,8 @@
         android:label="fragment_introduction"
         tools:layout="@layout/fragment_introduction" >
         <action
-            android:id="@+id/action_introductionFragment_to_shoppingActivity"
-            app:destination="@id/shoppingActivity" />
+            android:id="@+id/action_introductionFragment_to_accountOptionsFragment"
+            app:destination="@id/accountOptionsFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment2"

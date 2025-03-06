@@ -41,7 +41,7 @@
 
         <TextView
             android:id="@+id/specialProductPrice"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="RM 7.80"
             app:layout_constraintStart_toStartOf="@id/specialProductName"
@@ -79,7 +79,7 @@
             <ImageView
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:src="@drawable/icon_fav"
+                android:src="@drawable/fav_icon"
                 android:layout_gravity="center"
                 android:layout_marginTop="4dp" />
         </LinearLayout>

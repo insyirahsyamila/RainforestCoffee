@@ -28,7 +28,6 @@
     <string name="send">Send</string>
     <string name="example_gmail_com">example@gmail.com</string>
     <string name="reset_link_was_sent_to_your_email">Reset link was sent to your email</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="search">Search</string>
@@ -41,4 +40,5 @@
     <string name="see_menu">See menu</string>
     <string name="croissant">Croissant</string>
     <string name="bestsellers">BestSellers</string>
+    <string name="price_format">RM %1$s</string>
 </resources>

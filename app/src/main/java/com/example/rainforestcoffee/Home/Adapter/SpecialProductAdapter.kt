@@ -1,5 +1,6 @@
 package com.example.rainforestcoffee.Home.Adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -18,7 +19,8 @@ class SpecialProductAdapter : RecyclerView.Adapter<SpecialProductAdapter.Special
                 binding.apply {
                     Glide.with(itemView).load(products.images[0]).into(specialProductImg)
                     specialProductName.text = products.name
-                    specialProductPrice.text = products.price.toString()
+                    specialProductPrice.text = "RM ${products.price}"
+                    Log.d("ProductBind", "Price: RM ${products.price}")
                 }
             }
         }

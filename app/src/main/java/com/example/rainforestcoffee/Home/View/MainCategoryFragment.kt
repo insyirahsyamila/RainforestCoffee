@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -25,7 +26,9 @@ private val TAG = "MainCategoryFragment"
 @AndroidEntryPoint
 
 class MainCategoryFragment: Fragment() {
-    private lateinit var binding: FragmentMainCategoryBinding
+    private var _binding: FragmentMainCategoryBinding? = null
+    private val binding get() = _binding!!
+
     private lateinit var specialProductAdapter: SpecialProductAdapter
     private lateinit var bestProductsAdapter: BestProductsAdapter
     private lateinit var promoDealsAdapter: PromoDealsAdapter
@@ -36,7 +39,7 @@ class MainCategoryFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
         Log.d("MainCategoryFragment", "onCreateView called")
-        binding = FragmentMainCategoryBinding.inflate(inflater, container, false)
+        _binding = FragmentMainCategoryBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -93,14 +96,14 @@ class MainCategoryFragment: Fragment() {
                 binding.bestProductsRv.isNestedScrollingEnabled = false
                 when(it){
                     is Resource.Loading -> {
-                        showLoading()
+                        binding.bestProductPB.visibility = View.VISIBLE
                     }
                     is Resource.Success -> {
                         bestProductsAdapter.differ.submitList(it.data)
-                        hideLoading()
+                        binding.bestProductPB.visibility = View.GONE
                     }
                     is Resource.Error -> {
-                        hideLoading()
+                        binding.bestProductPB.visibility = View.GONE
                         Log.e(TAG, it.message.toString())
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                     }
@@ -108,6 +111,11 @@ class MainCategoryFragment: Fragment() {
                 }
             }
         }
+        binding.nestedScrollMain.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener{ v, _, scrollY, _, _ ->
+            if (v.getChildAt(0).bottom <= v.height + scrollY){
+                viewModel.fetchBestProducts()
+            }
+        })
     }
 
     private fun setupBestProducts() {
@@ -141,5 +149,10 @@ class MainCategoryFragment: Fragment() {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             adapter = specialProductAdapter
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

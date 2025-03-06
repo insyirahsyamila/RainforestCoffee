@@ -51,7 +51,7 @@
                 android:layout_height="18dp"
                 android:layout_marginEnd="8dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/icon_fav"
+                android:src="@drawable/fav_icon"
                 app:tint="@color/g_blue_gray200" />
         </LinearLayout>
 

@@ -26,7 +26,7 @@ class IntroductionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.startBtn.setOnClickListener{
-            findNavController().navigate(R.id.action_introductionFragment_to_shoppingActivity)
+            findNavController().navigate(R.id.action_introductionFragment_to_accountOptionsFragment)
         }
     }
 
